@@ -1,0 +1,29 @@
+def selection_sort_desc(lst):
+    n = len(lst)
+    
+    for i in range(n):
+        # Assume current position holds the maximum
+        max_index = i
+        
+        # Find the largest element in the remaining unsorted portion
+        for j in range(i + 1, n):
+            if lst[j] > lst[max_index]:
+                max_index = j
+        
+        # Swap the found maximum with position i
+        lst[i], lst[max_index] = lst[max_index], lst[i]
+    
+    return lst
+def average_even(lst):
+    total = 0
+    count = 0
+    
+    for num in lst:
+        if num % 2 == 0:
+            total += num
+            count += 1
+    
+    if count == 0:
+        return 0  # Avoid division by zero
+    
+    return total / count
